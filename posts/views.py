@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-
+from datetime import datetime
 
 def index(request):
-    return HttpResponse("posts 1")
+    return HttpResponse(datetime.now())
