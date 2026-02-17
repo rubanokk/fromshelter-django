@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+    <h1>Blog Posts</h1>
+    {% for post in posts %}
+        <article>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        </article>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+    
+    {% if posts.has_previous %}
+        <a href="?page={{ posts.previous_page_number }}">← Prev</a>
+    {% endif %}
+    {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}">Next →</a>
+    {% endif %}
+{% endblock %}

@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from datetime import datetime
+from django.shortcuts import render
+from posts.models import Post
 
 def index(request):
-    return HttpResponse(datetime.now())
+    posts = Post.objects.order_by('-created_at')
+    return render(request, 'posts/index.html', {'posts': posts})
