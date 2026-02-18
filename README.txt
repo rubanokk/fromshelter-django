@@ -1,3 +1,5 @@
+https://habr.com/ru/articles/546778/
+
 pigar generate
 
 Django установленный системой автоматической установки cms LTD BEGET
