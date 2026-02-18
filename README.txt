@@ -1,5 +1,10 @@
 https://habr.com/ru/articles/546778/
 
+source venv/bin/activate
+sudo systemctl restart gunicorn.socket gunicorn.service
+service gunicorn restart
+sudo journalctl -u gunicorn.service -e --no-pager | tail -50
+
 pigar generate
 
 Django установленный системой автоматической установки cms LTD BEGET
