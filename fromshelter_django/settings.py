@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%x80tp&z%1w17b9t9kkbpdroo@@&b6)%66-$%vw^(!6i!b&1nw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['localhost', 'patapum.org']
 
@@ -134,7 +134,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJANGO_VITE = {
   "default": {
-    "dev_mode": DEBUG
+    "dev_mode": os.getenv("DEBUG"),
+    "manifest_path": BASE_DIR / 'dist/.vite'
   }
 }
 
