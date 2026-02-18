@@ -6,8 +6,9 @@ export default defineConfig({
   plugins: [tailwindcss()],
   base: "/static/",
   build: {
-    manifest: "manifest.json",
-    outDir: resolve("./assets"),
+    emptyOutDir:true,
+    manifest: true,
+    outDir:'./dist',
     rollupOptions: {
       input: './frontend/index.js'
     }
