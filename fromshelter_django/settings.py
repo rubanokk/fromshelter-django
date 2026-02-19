@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-%x80tp&z%1w17b9t9kkbpdroo@@&b6)%66-$%vw^(!6i!b&1nw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['localhost', 'patapum.org']
+ALLOWED_HOSTS = ['localhost', 'patapum.org', 'patapum.ru']
 
 
 # Application definition
@@ -141,4 +141,8 @@ DJANGO_VITE = {
 
 STATICFILES_DIR = [
     BASE_DIR / 'dist'
+]
+
+STATICFILES_DIRS = [
+    BASE_DIR / "dist"
 ]
